@@ -159,7 +159,8 @@ if app_mode == 'Introduction':
     st.markdown("### 04 - Emissions Tracker")
     from codecarbon import EmissionsTracker
     project_name="Salary Prediction"
-    tracker = EmissionsTracker(project_name=project_name, experiment_name="Experiment1", tags=["training"])
+    experiment_name="Experiment1"
+    tracker = EmissionsTracker(project_name=project_name, experiment_name=experiment_name)
     tracker.start()
     #ml training
     tracker.stop()
