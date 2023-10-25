@@ -160,11 +160,12 @@ if app_mode == 'Introduction':
     from codecarbon import EmissionsTracker
     project_name="Salary Prediction"
     experiment_name="Experiment1"
-    tracker = EmissionsTracker(project_name=project_name, experiment_name=experiment_name)
+    with EmissionsTracker(project_name=project_name, experiment_name=experiment_name) as tracker:
     tracker.start()
     #ml training
     tracker.stop()
-    print(tracker)
+    emissions_data = tracker.emissions
+    print(emissions_data)
 
 if app_mode == 'Visualization':
 
