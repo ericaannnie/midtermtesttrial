@@ -13,7 +13,7 @@ import streamlit as st
 import random
 from PIL import Image
 import altair as alt
-
+from codecarbon import EmissionsTracker
 
 # Image
 image_sal = Image.open('sal1.jpg')
@@ -155,7 +155,17 @@ if app_mode == 'Introduction':
 
     else:
         st.success("Poor data quality due to low completeness ratio( less than 0.85).")
-
+  
+    st.markdown("### 04 - Emissions Tracker")
+    from codecarbon import EmissionsTracker
+    project_name="Salary Prediction"
+    experiment_name="Experiment1"
+    tracker = EmissionsTracker(project_name=project_name, experiment_name=experiment_name)
+    tracker.start()
+    #ml training
+    tracker.stop()
+    emissions_data = tracker.report()
+    print(emissions_data)
 
 if app_mode == 'Visualization':
 
