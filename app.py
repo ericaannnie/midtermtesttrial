@@ -176,12 +176,6 @@ if app_mode == 'Introduction':
         lm = LinearRegression()
         lm.fit(X_train,y_train)
     
-        # Predict the target variable for the test set
-        predictions = lm.predict(X_test)
-    
-    
-        # Call the prediction function and store the results
-        X_train, X_test, y_train, y_test, predictions, X, y = predict(select_variable, test_size, df, list_var)
 
         tracker.stop()
         emissions_data = tracker
