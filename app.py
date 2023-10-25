@@ -164,7 +164,7 @@ if app_mode == 'Introduction':
     tracker.start()
     #ml training
     tracker.stop()
-
+    print(tracker)
 
 if app_mode == 'Visualization':
 
