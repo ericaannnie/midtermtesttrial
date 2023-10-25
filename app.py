@@ -16,7 +16,7 @@ import altair as alt
 
 
 # Image
-image_sal = Image.open('sal1.jpg')
+image_sal = Image.open('sal.jpg')
 st.image(image_sal, width=500, use_column_width=True)
 
 # Title
