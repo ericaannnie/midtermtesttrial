@@ -161,11 +161,11 @@ if app_mode == 'Introduction':
     project_name="Salary Prediction"
     experiment_name="Experiment1"
     with EmissionsTracker(project_name=project_name, experiment_name=experiment_name) as tracker:
-    tracker.start()
-    #ml training
-    tracker.stop()
-    emissions_data = tracker.emissions
-    print(emissions_data)
+        tracker.start()
+        #ml training
+        tracker.stop()
+        emissions_data = tracker.emissions
+        print(emissions_data)
 
 if app_mode == 'Visualization':
 
