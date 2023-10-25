@@ -163,6 +163,27 @@ if app_mode == 'Introduction':
     with EmissionsTracker(project_name=project_name, experiment_name=experiment_name) as tracker:
         tracker.start()
         #ml training
+
+        X = df[['Age','Gender','Education Level', 'Job Title','Years of Experience']]
+        
+        y = df['Salary']
+    
+        # Split the data into training and testing sets
+        X = pd.get_dummies(data=X, drop_first=True)
+        X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2,random_state=40)
+    
+        # Initialize and train a linear regression model
+        lm = LinearRegression()
+        lm.fit(X_train,y_train)
+    
+        # Predict the target variable for the test set
+        predictions = lm.predict(X_test)
+    
+        return X_train, X_test, y_train, y_test, predictions, X, y
+    
+        # Call the prediction function and store the results
+        X_train, X_test, y_train, y_test, predictions, X, y = predict(select_variable, test_size, df, list_var)
+
         tracker.stop()
         emissions_data = tracker
         print(emissions_data)
