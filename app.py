@@ -164,7 +164,7 @@ if app_mode == 'Introduction':
         tracker.start()
         #ml training
         tracker.stop()
-        emissions_data = tracker.emissions
+        emissions_data = tracker
         print(emissions_data)
 
 if app_mode == 'Visualization':
